@@ -1,10 +1,9 @@
 import * as React from 'react';
 
+export const TaskCreate = ({taskdescription}) => {
 
-export const TaskDelete = ({task_id}) => {
-
-    function handleDelete(id) {
-        fetch(`http://localhost:8080/task?id=${task_id}`, {
+    function handleCreate(taskdescription){
+        fetch(`http://localhost:8080/task?taskdescription=${taskdescription}`, {
             method: 'POST',
             redirect: 'follow',
             headers: {
@@ -16,11 +15,4 @@ export const TaskDelete = ({task_id}) => {
         })
         return console.log("Success")
     }
-
-    return (
-        <div>
-            <button onClick={() => {handleDelete(task_id); window.location.reload()}} autoFocus> Done </button>
-        </div>
-    );
 }
-export default TaskDelete;

@@ -11,5 +11,7 @@ public interface TaskRepository extends CrudRepository<Task, Integer> {
 
     void deleteByTaskdescription(String taskdescription);
 
-    public Optional<Task> findByTaskdescription(String Taskdescription);
+    Optional<Task> findByTaskdescription(String Taskdescription);
+    @Override
+    Optional<Task> findById(Integer integer);
 }

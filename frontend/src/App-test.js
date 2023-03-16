@@ -11,12 +11,13 @@ export const Apptest = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:8080/tasks", {
+        fetch("http://localhost:8080/task", {
             method: 'GET',
             redirect: 'follow',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+
             },
         })
             .then(res => res.json())
@@ -47,8 +48,9 @@ export const Apptest = () => {
                     {tasks.map((task) => (
             <table>
                 <tr key={task.id}>
+                    <td>{"Task" + task.id || "nicht vorhanden"}</td>
                     <td>{task.taskdescription || "nicht vorhanden"}</td>
-                    <td> <TaskDelete taskdescription={task.taskdescription}></TaskDelete></td>
+                    <td> <TaskDelete task_id={task.id}></TaskDelete></td>
                 </tr>
             </table>))}
                 </header>
