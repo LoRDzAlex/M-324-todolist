@@ -3,13 +3,13 @@
 ## TLDR 
 
 ToDo-Liste mit React (frontend) und Spring (backend). Weitere Details sind in den
-Kommentaren vor allem in App.js zu finden.
+Kommentaren vor allem in App-main.js zu finden.
 
 ## Relevante Dateien in den Teil-Projekten (Verzeichnisse):
 
 1. diese Beschreibung
 2. frontend (Tools: npm und VSCode)
-	* App.js
+	* App-main.js
 
 3. backend (Eclipse oder VS-Code)
 	* DemoApplication.java
