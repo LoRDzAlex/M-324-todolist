@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useEffect, useState} from 'react';
-import {Checkbox, TableCell, TableHead, TableRow} from "@mui/material";
+import React, {useState} from 'react';
 
 
 export const Designtest = () => {

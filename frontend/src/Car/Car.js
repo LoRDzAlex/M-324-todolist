@@ -2,6 +2,8 @@ import logo from '../logo.svg';
 import '../App.css';
 import React, {useEffect, useState} from 'react';
 import CarDelete from "./CarDelete";
+import Appbar from "../Appbar";
+import CarCreate from "./CarCreate";
 
 
 export const Car = () => {
@@ -39,25 +41,38 @@ export const Car = () => {
         return <div>Loading...</div>;
     } else {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1>
-                        Car List
-                    </h1>
-                    {cars.map((car) => (
-                        <table>
+            <>
+                <Appbar/>
+                <div className="App">
+                    <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo"/>
+                        <h1>
+                            Car List
+                        </h1>
+                    </header>
+                    <body className="App-body">
+                    <table className="Table">
+                        <thead className="Table-header">
+                        <th>Car Name</th>
+                        <th>Max Speed</th>
+                        <th>ReleaseDate</th>
+                        <th>Car Type</th>
+                        </thead>
+                        {cars.map((car) => (
+                            <tbody className="Table-body">
                             <tr key={car.id}>
-                                <td>{"Car " + car.id || "nicht vorhanden"}</td>
-                                <td>{car.CarName || "nicht vorhanden"}</td>
-                                <td>{car.MaxSpeed || "nicht vorhanden"}</td>
-                                <td>{car.ReleaseDate || "nicht vorhanden"}</td>
-                                <td>{car.CarType || "nicht vorhanden"}</td>
+                                <td>{car.carName || "nicht vorhanden"}</td>
+                                <td>{car.maxSpeed || "nicht vorhanden"}</td>
+                                <td>{car.releaseDate || "nicht vorhanden"}</td>
+                                <td>{car.carType || "nicht vorhanden"}</td>
                                 <td><CarDelete car_id={car.id}></CarDelete></td>
                             </tr>
-                        </table>))}
-                </header>
-            </div>
+                            </tbody>))}
+                    </table>
+                    <CarCreate></CarCreate>
+                    </body>
+                </div>
+            </>
         );
     }
 }

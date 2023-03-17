@@ -35,18 +35,18 @@ public class CarController {
 
     @PostMapping(path = "")
     public ResponseEntity<String> createCar(
-            @RequestParam String CarName,
-            @RequestParam int MaxSpeed,
-            @RequestParam String ReleaseDate,
-            @RequestParam String CarType
+            @RequestParam String carName,
+            @RequestParam int maxSpeed,
+            @RequestParam String releaseDate,
+            @RequestParam String carType
     ) {
         try {
-            Car car = new Car(CarName, MaxSpeed, Date.valueOf(ReleaseDate), CarType);
+            Car car = new Car(carName, maxSpeed, Date.valueOf(releaseDate), carType);
             carRepository.save(car);
         } catch (Exception exception) {
             System.out.println("Fehler beim Erstellen des Autos");
         }
-        return ResponseEntity.ok("Saved " + CarName);
+        return ResponseEntity.ok("Saved " + carName);
     }
 
     @DeleteMapping(path = "")

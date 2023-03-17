@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Button} from "@mui/material";
 
 
 export const CarDelete = ({car_id}) => {
@@ -19,11 +20,11 @@ export const CarDelete = ({car_id}) => {
 
     return (
         <div>
-            <button onClick={() => {
+            <Button onClick={() => {
                 handleDelete(car_id);
                 window.location.reload()
-            }} autoFocus> Done
-            </button>
+            }} autoFocus> Delete
+            </Button>
         </div>
     );
 }

@@ -2,6 +2,8 @@ import logo from '../logo.svg';
 import '../App.css';
 import React, {useEffect, useState} from 'react';
 import TaskDelete from "./TaskDelete";
+import Appbar from "../Appbar";
+import TaskCreate from "./TaskCreate";
 
 
 export const Task = () => {
@@ -39,22 +41,36 @@ export const Task = () => {
         return <div>Loading...</div>;
     } else {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1>
-                        ToDo Liste
-                    </h1>
-                    {tasks.map((task) => (
-            <table>
-                <tr key={task.id}>
-                    <td>{"Task " + task.id || "nicht vorhanden"}</td>
-                    <td>{task.taskdescription || "nicht vorhanden"}</td>
-                    <td> <TaskDelete task_id={task.id}></TaskDelete></td>
-                </tr>
-            </table>))}
-                </header>
-            </div>
+            <>
+                <Appbar/>
+                <div className="App">
+                    <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo"/>
+                        <h1>
+                            ToDo Liste
+                        </h1>
+                    </header>
+                    <body className={"App-body"}>
+                    <table className="Table">
+                        <thead className="Table-header">
+                        <tr>
+                            <th>Task Number</th>
+                            <th>Task Description</th>
+                        </tr>
+                        </thead>
+                        {tasks.map((task) => (
+                            <tbody className="Table-body">
+                            <tr key={task.id}>
+                                <td>{"Task " + task.id || "nicht vorhanden"}</td>
+                                <td>{task.taskdescription || "nicht vorhanden"}</td>
+                                <td><TaskDelete task_id={task.id}></TaskDelete></td>
+                            </tr>
+                            </tbody>))}
+                    </table>
+                    <TaskCreate></TaskCreate>
+                    </body>
+                </div>
+            </>
         );
     }
 }

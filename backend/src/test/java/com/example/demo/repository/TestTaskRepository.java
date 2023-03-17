@@ -31,7 +31,7 @@ public class TestTaskRepository {
         final String task = "test";
         Task t = new Task();
         t.setTaskdescription(task);
-        Optional<Task> result = taskRepository.findByTaskdescription(task);
+        Optional<Task> result = Optional.ofNullable(taskRepository.findByTaskdescription(task));
 
         assertTrue(result.isPresent());
         assertEquals(task, result.get().getTaskdescription());
