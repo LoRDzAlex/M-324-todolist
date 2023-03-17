@@ -5,7 +5,7 @@ export const TaskDelete = ({task_id}) => {
 
     function handleDelete(id) {
         fetch(`http://localhost:8080/task?id=${task_id}`, {
-            method: 'POST',
+            method: 'DELETE',
             redirect: 'follow',
             headers: {
                 'Accept': 'application/json',

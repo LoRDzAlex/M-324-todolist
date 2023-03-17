@@ -1,17 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import React, {useEffect, useState} from 'react';
 import TaskDelete from "./TaskDelete";
 
 
-export const Apptest = () => {
+export const Task = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(null);
     const [tasks, setTask] = useState(null);
 
 
     useEffect(() => {
-        fetch("http://localhost:8080/task", {
+        fetch("http://localhost:8080/task/", {
             method: 'GET',
             redirect: 'follow',
             headers: {
@@ -48,7 +48,7 @@ export const Apptest = () => {
                     {tasks.map((task) => (
             <table>
                 <tr key={task.id}>
-                    <td>{"Task" + task.id || "nicht vorhanden"}</td>
+                    <td>{"Task " + task.id || "nicht vorhanden"}</td>
                     <td>{task.taskdescription || "nicht vorhanden"}</td>
                     <td> <TaskDelete task_id={task.id}></TaskDelete></td>
                 </tr>
@@ -58,4 +58,4 @@ export const Apptest = () => {
         );
     }
 }
-export default Apptest;
+export default Task;
