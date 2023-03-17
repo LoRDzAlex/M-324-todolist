@@ -43,12 +43,12 @@ export const Car = () => {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1>
-                        ToDo Liste
+                        Car List
                     </h1>
                     {cars.map((car) => (
                         <table>
                             <tr key={car.id}>
-                                <td>{"Car" + car.id || "nicht vorhanden"}</td>
+                                <td>{"Car " + car.id || "nicht vorhanden"}</td>
                                 <td>{car.CarName || "nicht vorhanden"}</td>
                                 <td>{car.MaxSpeed || "nicht vorhanden"}</td>
                                 <td>{car.ReleaseDate || "nicht vorhanden"}</td>

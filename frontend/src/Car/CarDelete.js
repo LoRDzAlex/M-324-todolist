@@ -5,7 +5,7 @@ export const CarDelete = ({car_id}) => {
 
     function handleDelete(id) {
         fetch(`http://localhost:8080/car?id=${car_id}`, {
-            method: 'POST',
+            method: 'DELETE',
             redirect: 'follow',
             headers: {
                 'Accept': 'application/json',
