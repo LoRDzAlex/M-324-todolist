@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background-color: #282c34;
 }
 
 .App-logo {
@@ -28,26 +29,44 @@
   color: #61dafb;
 }
 
-.App-body{
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-body {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-.App-body table{
-  border-top: white 1px solid;
+.Table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.7em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
+.Table thead th {
+    background-color: #282c34;
+    border-bottom: 1px solid white;
+    text-align: left;
+}
+
+.Table tbody tr {
+    text-align: left;
+}
+
+.Table th, .Table td {
+    padding: 12px 15px;
+}
+
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 

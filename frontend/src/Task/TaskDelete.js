@@ -1,5 +1,6 @@
 import * as React from 'react';
-
+import {IconButton} from "@mui/material";
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 export const TaskDelete = ({task_id}) => {
 
@@ -19,7 +20,12 @@ export const TaskDelete = ({task_id}) => {
 
     return (
         <div>
-            <button onClick={() => {handleDelete(task_id); window.location.reload()}} autoFocus> Done </button>
+            <IconButton onClick={() => {
+                handleDelete(task_id);
+                window.location.reload()
+            }} autoFocus>
+                <TaskAltIcon color="success"/>
+            </IconButton>
         </div>
     );
 }

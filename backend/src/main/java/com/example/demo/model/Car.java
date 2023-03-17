@@ -13,20 +13,20 @@ public class Car {
     @GeneratedValue
     private Integer id;
 
-    private String CarName;
-    private Integer MaxSpeed;
-    private Date ReleaseDate;
-    private String CarType;
+    private String carName;
+    private Integer maxSpeed;
+    private Date releaseDate;
+    private String carType;
 
     public Car() {
 
     }
 
     public Car(String carName, Integer maxSpeed, Date releaseDate, String carType) {
-        CarName = carName;
-        MaxSpeed = maxSpeed;
-        ReleaseDate = releaseDate;
-        CarType = carType;
+        this.carName = carName;
+        this.maxSpeed = maxSpeed;
+        this.releaseDate = releaseDate;
+        this.carType = carType;
     }
 
     public Integer getId() {
@@ -38,35 +38,35 @@ public class Car {
     }
 
     public String getCarName() {
-        return CarName;
+        return carName;
     }
 
     public void setCarName(String carName) {
-        CarName = carName;
+        carName = carName;
     }
 
     public Integer getMaxSpeed() {
-        return MaxSpeed;
+        return maxSpeed;
     }
 
     public void setMaxSpeed(Integer maxSpeed) {
-        MaxSpeed = maxSpeed;
+        maxSpeed = maxSpeed;
     }
 
     public Date getReleaseDate() {
-        return ReleaseDate;
+        return releaseDate;
     }
 
     public void setReleaseDate(Date releaseDate) {
-        ReleaseDate = releaseDate;
+        releaseDate = releaseDate;
     }
 
     public String getCarType() {
-        return CarType;
+        return carType;
     }
 
     public void setCarType(String carType) {
-        CarType = carType;
+        carType = carType;
     }
 
     @Override
@@ -74,11 +74,11 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(id, car.id) && Objects.equals(CarName, car.CarName) && Objects.equals(MaxSpeed, car.MaxSpeed) && Objects.equals(ReleaseDate, car.ReleaseDate) && Objects.equals(CarType, car.CarType);
+        return Objects.equals(id, car.id) && Objects.equals(carName, car.carName) && Objects.equals(maxSpeed, car.maxSpeed) && Objects.equals(releaseDate, car.releaseDate) && Objects.equals(carType, car.carType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, CarName, MaxSpeed, ReleaseDate, CarType);
+        return Objects.hash(id, carName, maxSpeed, releaseDate, carType);
     }
 }
