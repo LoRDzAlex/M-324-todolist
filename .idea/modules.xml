@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/backend/demo.iml" filepath="$PROJECT_DIR$/backend/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/m-324-todolist-bravo.iml" filepath="$PROJECT_DIR$/.idea/m-324-todolist-bravo.iml" />
     </modules>
   </component>
