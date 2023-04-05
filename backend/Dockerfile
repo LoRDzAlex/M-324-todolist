@@ -2,7 +2,7 @@ FROM maven:3.8.6-openjdk-18-slim AS build
 
 COPY src /tmp/src
 COPY pom.xml /tmp
-RUN mvn -f /tmp/pom.xml clean package -DskipTests
+RUN mvn -f /tmp/pom.xml clean package
 
 
 FROM openjdk:18-jdk-alpine
