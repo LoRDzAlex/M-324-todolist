@@ -11,7 +11,6 @@ public interface CarRepository extends CrudRepository<Car, Integer> {
 
     Car findById(int id);
 
-    @Query("SELECT c FROM Car c WHERE c.CarName = :carName")
-    Car findByCarName(@Param("carName") String carName);
+    Car findByCarName(String carName);
 
 }

@@ -12,6 +12,7 @@ import java.sql.Date;
 /**
  * Loading TestData into Database
  */
+/*
 @Component
 public class DataBaseLoader implements CommandLineRunner {
     private final TaskRepository taskRepository;
@@ -36,3 +37,4 @@ public class DataBaseLoader implements CommandLineRunner {
         this.taskRepository.save(new Task("Python Lernen"));
     }
 }
+*/
